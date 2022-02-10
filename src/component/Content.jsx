@@ -127,6 +127,7 @@ function Content() {
 
     // useLayoutEffect
     const [count, setCount] = useState(0)
+    // xu ly sync re-render
     useLayoutEffect(() => {
         if(count > 3){
             setCount(0)
@@ -138,8 +139,7 @@ function Content() {
     }
 
     return (
-        <div style={{ paddingLeft: '32px' }}>
-            <h1>useEffect</h1>
+        <div style={{ paddingLeft: '20px' }}>
             {/* test useLayoutEffect */}
             <h1>{count}</h1>
             <button onClick={handleCount}>+</button>

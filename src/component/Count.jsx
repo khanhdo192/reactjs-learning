@@ -23,9 +23,9 @@ function Count(props) {
     }, [count])
 
     useEffect(() => {
-        console.log(h1Ref.current)
+        // console.log(h1Ref.current)
         const rect = h1Ref.current.getBoundingClientRect()
-        console.log(rect)
+        // console.log(rect)
     })
 
     const handleStart = () => {
@@ -38,10 +38,10 @@ function Count(props) {
         clearInterval(timerId.current)
     }
     
-    console.log(count, prevCount.current)
+    // console.log(count, prevCount.current)
 
     return (
-        <div>
+        <div style={{paddingLeft: '20px'}}>
             <h1>useRef</h1>
             <h1 ref={h1Ref}>{count}</h1>
             <button onClick={handleStart}>Start</button>

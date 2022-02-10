@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import Count from './component/Count';
 import Header from './component/Header';
-import Content from './Content'
+import Memo from './component/Memo';
+import Product from './component/Product';
+import Reducer from './component/Reducer';
+import Content from './component/Content'
 
 // const gifts = [
 //   'a',
@@ -118,8 +121,10 @@ function App() {
     <div className="App">
       <Header />
       <Count />
-      <h1>useState</h1>
+      <Memo />
+      <h1 style={{paddingLeft: '20px'}}>useState</h1>
       <input
+        style={{marginLeft: '20px'}}
         value={job}
         onChange={event => setJob(event.target.value)}
       />
@@ -131,7 +136,10 @@ function App() {
           <li key={index}>{job}</li>
         ))}
       </ul>
-      <button onClick={() => setShow(!show)}>Toggle</button>
+      <Product />
+      <Reducer />
+      <h1 style={{paddingLeft: '20px'}}>useEffect</h1>
+      <button style={{marginLeft: '20px'}} onClick={() => setShow(!show)}>Toggle</button>
       {show && <Content />}
     </div>
   );
