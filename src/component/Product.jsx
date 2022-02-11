@@ -31,14 +31,14 @@ const Product = () => {
     return (
         <div style={{paddingLeft: '20px'}}>
             <h1>useMemo</h1>
-            <input 
+            Product:<input 
                 ref={nameRef}
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)} 
             />
             <br />
-            <input 
+            Price:<input 
                 type="text"
                 value={price}
                 onChange={e => setPrice(e.target.value)}
@@ -46,7 +46,7 @@ const Product = () => {
             <br />
             <button onClick={handleSubmit}>Add</button>
             <br />
-            Total:{total}
+            <h3>Total Price: {total}</h3>
             <ul>
                 {products.map((product, index) => (
                     <li key={index}>{product.name} - {product.price}</li>

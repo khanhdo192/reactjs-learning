@@ -10,7 +10,7 @@ function UseContent({ onIncrease }) {
 
     return (
         <div>
-            <h1>useCallback</h1>
+            <h1>useCallback - memo</h1>
             <button onClick={onIncrease}>+</button>
         </div>
     );

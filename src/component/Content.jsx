@@ -140,9 +140,10 @@ function Content() {
 
     return (
         <div style={{ paddingLeft: '20px' }}>
+            <h1>useEffect</h1>
             {/* test useLayoutEffect */}
             <h1>{count}</h1>
-            <button onClick={handleCount}>+</button>
+            <button onClick={handleCount}>Count to 3</button>
 
             {/* test fake chat */}
             <ul>
@@ -164,11 +165,12 @@ function Content() {
 
             {/* test preview img upload */}
             <div>
-                <input 
+                Image:<input 
                     type='file'
                     onChange={handlePreviewAvatar}
                     multiple
                 />
+                <br />
                 {ava && 
                     ava.preview.map((a, index) => (
                         <img key={index} src={a} alt="" width="20%"/>
@@ -177,17 +179,16 @@ function Content() {
 
             {/* test resize window/ countdown */}
             <div>
-                {width}
-                <br/>
-                {cd}
+                <h3>Window width: {width}</h3>
+                <h3>Countdown form 180: {cd}</h3>
             </div>
 
             {/* test change page title */}
-            <input 
+            Title:<input 
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />
-
+            <br />
             {/* test change tab call API */}
             {tabs.map(tab => (
                 <button

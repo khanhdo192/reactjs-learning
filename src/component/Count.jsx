@@ -1,11 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react';
-import PropTypes from 'prop-types';
 
-
-// luu gia tri bat ky qua 1 tham chieu ben ngoai component
-Count.propTypes = {
-    
-};
+// useRef() luu gia tri bat ky qua 1 tham chieu ben ngoai component
 
 function Count(props) {
     const [count, setCount] = useState(60)

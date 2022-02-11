@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-
-Header.propTypes = {
-    
-};
 
 function getRandomColor(){
     const COLOR_LIST = ['brown', 'green', 'blue', 'yellow', 'gray']
@@ -11,7 +6,7 @@ function getRandomColor(){
     return COLOR_LIST[randomIndex]
 }
 
-function Header(props) {
+function Header() {
     const [color, setColor] = useState(() => {
         return localStorage.getItem('box-color') || 'red'
     })
@@ -29,7 +24,7 @@ function Header(props) {
             style={{backgroundColor: color}}
             onClick={handleBoxClick}
         >
-            {color}
+            <h1>Learning ReactJs - {color}</h1>
         </div>
     );
 }

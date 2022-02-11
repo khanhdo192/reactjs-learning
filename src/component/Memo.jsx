@@ -1,10 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
 import UseContent from './UseContent';
-
-Memo.propTypes = {
-    
-};
 
 // memo() -> Higher Order Component (HOC)
 // xu ly component de tranh re-render ko can thiet
