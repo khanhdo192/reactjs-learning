@@ -1,19 +1,19 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo } from "react";
+import PropTypes from "prop-types";
 
 UseContent.propTypes = {
-    onIncrease: PropTypes.func
+  onIncrease: PropTypes.func,
 };
 
 function UseContent({ onIncrease }) {
-    // console.log('re-render')
+  // console.log('re-render')
 
-    return (
-        <div>
-            <h1>useCallback - memo</h1>
-            <button onClick={onIncrease}>+</button>
-        </div>
-    );
+  return (
+    <div>
+      <h1>useCallback - memo</h1>
+      <button onClick={onIncrease}>+</button>
+    </div>
+  );
 }
 
 export default memo(UseContent);
