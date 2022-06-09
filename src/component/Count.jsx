@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from 'react';
 
 // useRef() luu gia tri bat ky qua 1 tham chieu ben ngoai component
 
@@ -20,7 +20,7 @@ function Count(props) {
   useEffect(() => {
     // console.log(h1Ref.current)
     const rect = h1Ref.current.getBoundingClientRect();
-    // console.log(rect)
+    console.log(rect);
   });
 
   const handleStart = () => {
@@ -36,7 +36,7 @@ function Count(props) {
   // console.log(count, prevCount.current)
 
   return (
-    <div style={{ paddingLeft: "20px" }}>
+    <div style={{ paddingLeft: '20px' }}>
       <h1>useRef</h1>
       <h1 ref={h1Ref}>{count}</h1>
       <button onClick={handleStart}>Start</button>

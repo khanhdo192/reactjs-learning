@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 //  1.useEffect(callback)
 //  - goi callback moi khi component re-render
@@ -10,19 +10,19 @@ import { useEffect, useLayoutEffect, useState } from "react";
 // 4. useLayoutEffect
 // - goi callback roi moi re-render
 
-const tabs = ["posts", "comments", "albums"];
+const tabs = ['posts', 'comments', 'albums'];
 const lessons = [
   {
     id: 1,
-    name: "js1",
+    name: 'js1',
   },
   {
     id: 2,
-    name: "js2",
+    name: 'js2',
   },
   {
     id: 3,
-    name: "js3",
+    name: 'js3',
   },
 ];
 
@@ -30,14 +30,14 @@ function Content() {
   // callback luon dc goi sau khi component mount
 
   // useEffect callback
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
   useEffect(() => {
     document.title = title;
   });
 
   // useEffect call API with deps change
   const [posts, setPosts] = useState([]);
-  const [type, setType] = useState("posts");
+  const [type, setType] = useState('posts');
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/${type}`)
       .then((res) => res.json())
@@ -52,12 +52,12 @@ function Content() {
     const handleScroll = () => {
       setGoToTop(window.scrollY >= 200);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     // cleanup luon dc goi truoc khi unmouted
     // va truoc khi callback dc goi tru luc mounted
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   const handleScrollTop = () => {
@@ -71,10 +71,10 @@ function Content() {
       setWidth(window.innerWidth);
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -94,7 +94,7 @@ function Content() {
     return () => {
       ava &&
         ava.preview.map((index) => {
-          URL.revokeObjectURL(ava.preview[index]);
+          return URL.revokeObjectURL(ava.preview[index]);
         });
     };
   }, [ava]);
@@ -104,7 +104,7 @@ function Content() {
     const arrLink = [];
     arrFile.map((file) => {
       const urlFile = URL.createObjectURL(file);
-      arrLink.push(urlFile);
+      return arrLink.push(urlFile);
     });
     files.preview = arrLink;
     setAva(files);
@@ -138,7 +138,7 @@ function Content() {
   };
 
   return (
-    <div style={{ paddingLeft: "20px" }}>
+    <div style={{ paddingLeft: '20px' }}>
       <h1>useEffect</h1>
       {/* test useLayoutEffect */}
       <h1>{count}</h1>
@@ -149,7 +149,7 @@ function Content() {
           <li
             key={lesson.id}
             style={{
-              color: lessonId === lesson.id ? "red" : "#333",
+              color: lessonId === lesson.id ? 'red' : '#333',
             }}
             onClick={() => {
               setLessonId(lesson.id);
@@ -162,12 +162,9 @@ function Content() {
       {/* test preview img upload */}
       <div>
         Image:
-        <input type="file" onChange={handlePreviewAvatar} multiple />
+        <input type='file' onChange={handlePreviewAvatar} multiple />
         <br />
-        {ava &&
-          ava.preview.map((a, index) => (
-            <img key={index} src={a} alt="" width="20%" />
-          ))}
+        {ava && ava.preview.map((a, index) => <img key={index} src={a} alt='' width='20%' />)}
       </div>
       {/* test resize window/ countdown */}
       <div>
@@ -182,7 +179,7 @@ function Content() {
       {tabs.map((tab) => (
         <button
           key={tab}
-          style={type === tab ? { color: "#fff", backgroundColor: "#333" } : {}}
+          style={type === tab ? { color: '#fff', backgroundColor: '#333' } : {}}
           onClick={() => setType(tab)}
         >
           {tab}
@@ -197,7 +194,7 @@ function Content() {
       {goToTop && (
         <button
           style={{
-            position: "fixed",
+            position: 'fixed',
             right: 20,
             bottom: 20,
           }}
